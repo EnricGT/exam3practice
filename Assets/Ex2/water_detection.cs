@@ -18,10 +18,11 @@ public class water_detection : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    { 
+    private void OnTriggerEnter(Collider other)
+    {
         water_fallen++;
         text.text = water_fallen.ToString();
+        Destroy(other.gameObject);
     }
 
 }
